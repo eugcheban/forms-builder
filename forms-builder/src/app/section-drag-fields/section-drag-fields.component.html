@@ -1,0 +1,17 @@
+<div class="component">
+    <p>section-drag-fields works!</p>
+    <div
+      cdkDropList id="list-1" 
+      cdkDropListConnectedTo="list-2"
+      [cdkDropListData]="elements"
+      class="example-list">
+      <div class="example-box" *ngFor="let el of elements; let i = index" [ngSwitch]="el" cdkDrag>
+        <div *ngSwitchCase="'input'">
+            <mat-icon aria-hidden="false" aria-label="icon">input</mat-icon>
+        </div>
+        <div *ngSwitchCase="'button'">
+            <mat-icon aria-hidden="false" aria-label="icon">smart_button</mat-icon>
+        </div>
+      </div>
+    </div>
+</div>

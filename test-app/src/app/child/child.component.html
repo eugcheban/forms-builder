@@ -1,0 +1,14 @@
+<h1>Child Component</h1>
+<div class='child'>
+    <div
+      cdkDropList id="list-2" 
+      cdkDropListConnectedTo="list-1"
+      cdkDropListDisabled='false'
+      cdkDropListSortingDisabled='true'
+      [cdkDropListData]="elementsChild"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)" cdkDrag>
+      
+    </div>
+      <div class="example-box" *ngFor="let el of elementsChild" cdkDrag>{{el}}</div>
+</div>

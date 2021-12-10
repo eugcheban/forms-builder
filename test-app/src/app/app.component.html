@@ -1,0 +1,31 @@
+<h2>The portal outlet is below:</h2>
+<div class="example-portal-outlet" cdkDropListGroup>
+  <div
+      cdkDropList id="list-1" 
+      cdkDropListConnectedTo="list-2"
+      [cdkDropListData]="elements"
+      class="example-list">
+      <div class="example-box" *ngFor="let el of elements; let i = index" [ngSwitch]="el" cdkDrag>
+        <div *ngSwitchCase="'input'">
+           This is input element! 
+        </div>
+        <div *ngSwitchCase="'button'">
+           This is button element! 
+        </div>
+      </div>
+    </div>
+
+    
+      
+    
+    
+</div>
+<ng-template #templatePortalContent>Hello, this is a template portal</ng-template>
+<app-child>
+
+</app-child>
+<button (click)="selectedPortal = componentPortal">Render component portal</button>
+<button (click)="selectedPortal = templatePortal">Render template portal</button>
+<button (click)="selectedPortal = domPortal">Render DOM portal</button>
+
+<div #domPortalContent>Hello, this is a DOM portal</div>
